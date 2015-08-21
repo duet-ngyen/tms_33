@@ -1,0 +1,23 @@
+<% provide :title, t("application.title.list_course_title") %>
+<h1><%= t "course_list" %></h1>
+<div class="col-sm-3 col-md-12">
+  <%= link_to t("application.link.add_course"), new_supervisor_course_path,
+    class: "btn btn-default btn-primary" %></br>
+  <%= render "search_form" %>
+
+  <%= paginate @courses %>
+  <ul class="list-group">
+    <% @courses.each do |course| %>
+      <li class="list-group-item list-group-item-info">
+        <b><%= link_to course.title, supervisor_course_path(course) %></b></br>
+        <%= link_to t("application.link.show"), supervisor_course_path(course),
+          class: "btn btn-xs btn-info" %> |
+        <%= link_to t("application.link.delete"), supervisor_course_path(course),
+          class: "btn btn-xs btn-danger",
+          method: :delete,
+          data: {confirm: t("application.message.delete_confirm")} %>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @courses %>
+</div>

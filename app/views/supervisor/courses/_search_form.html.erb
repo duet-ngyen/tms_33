@@ -1,0 +1,5 @@
+<%= search_form_for @search, url: search_supervisor_courses_path do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+  <%= f.submit t("application.button.search") %>
+<% end %>
