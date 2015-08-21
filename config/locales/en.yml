@@ -21,7 +21,26 @@
 
 en:
   hello: "Hello world"
-  base_title: "Training System"
-  home: "Home"
-  help: "Help"
-  about: "About"
+  application:
+    title:
+      base_title: "Training System"
+      home: "Home"
+      help: "Help"
+      about: "About"
+      list_course_title: "Course list"
+    notice:
+      course_created: "Course has been created"
+      course_updated: "This course has been updated"
+      course_deleted: "This course has been destroy"
+      course_not_deleted: "This course hasn't been destroy"
+    message:
+      delete_confirm: "Are you sure?"
+    button:
+      submit: "submit"
+      search: "search"
+    link:
+      edit_course: "Edit description"
+      delete: "Delete"
+      show: "Details"
+      add_course: "Add new course"
+  course_list: "Course list"
