@@ -5,7 +5,24 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("application.title.home"), root_path %></li>
         <li><%= link_to t("application.title.about"), about_path %></li>
-        <li><%= link_to t("application.title.help"), help_path %></li>
+        <li>
+          <% if user_signed_in? %>
+            <div class="welcome">
+              <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.name %> <span class="caret"></span>
+              </span>
+              <ul class="dropdown-menu">
+                <li><a href="#"><%= current_user.email %></a></li>
+                <li><a href="#"><%= link_to "Edit profile", "#", :class => "navbar-link" %></a></li>
+                <li><a href="#"><%= link_to "View profile", user_path(current_user), :class => "navbar-link" %></a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link"  %></a></li>
+              </ul>
+            </div>
+          <% else %>
+            <%= link_to "Login", user_session_path, :class => "navbar-link"  %>
+          <% end %>
+        </li>
       </ul>
     </nav>
   </div>

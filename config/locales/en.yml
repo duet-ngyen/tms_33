@@ -21,6 +21,7 @@
 
 en:
   hello: "Hello world"
+
   application:
     title:
       base_title: "Training System"
@@ -44,3 +45,10 @@ en:
       show: "Details"
       add_course: "Add new course"
   course_list: "Course list"
+
+  welcome: "Welcome to TMS Framgia"
+  your_profile: "Your profiles"
+  name: "Name"
+  email: "Email"
+  role: "Role"
+
