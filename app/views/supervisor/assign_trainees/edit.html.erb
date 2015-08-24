@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @course, url: supervisor_course_assign_trainees_path do |f| %>
+      <h2><%= t "application.string_constant.update_user_course" %></h2>
+      <% @users.each do |user| %>
+        <ul>
+          <li>
+            <%= user.name %>
+            <%= f.check_box :user_ids,
+              {name: t("application.string_constant.name_checkbox_course_users"),
+              checked: @course.users.include?(user)}, user.id, nil %>
+          </li>
+        </ul>
+      <% end %>
+      <div class="actions">
+        <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

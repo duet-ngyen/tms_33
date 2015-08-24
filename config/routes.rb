@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     root "courses#index"
     resources :courses do
       collection {get :search, to: "courses#index"}
+      resource :assign_trainees, only: [:edit, :update]
     end
   end
 
