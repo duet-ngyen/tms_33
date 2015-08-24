@@ -34,6 +34,7 @@ en:
       course_updated: "This course has been updated"
       course_deleted: "This course has been destroy"
       course_not_deleted: "This course hasn't been destroy"
+      user_updated: "Your profiles has been updated"
     message:
       delete_confirm: "Are you sure?"
     button:
@@ -45,6 +46,12 @@ en:
       show: "Details"
       add_course: "Add new course"
   course_list: "Course list"
+
+  header:
+    edit_profile: "Edit profiles"
+    view_profile: "View profiles"
+    logout: "Logout"
+    login: "Login"
 
   welcome: "Welcome to TMS Framgia"
   your_profile: "Your profiles"

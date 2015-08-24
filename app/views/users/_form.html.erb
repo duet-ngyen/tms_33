@@ -1,0 +1,22 @@
+<%= form_for @user do |f| %>
+  <div class="form">
+    <div class="field margintop">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field margintop">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field margintop">
+      <%= f.label :role %><br>
+      <%= f.select :role, [["trainee", "trainee"], ["supervisor", "supervisor"]] %>
+    </div>
+
+    <div class="action margintop">
+      <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
