@@ -1,0 +1,21 @@
+<%= form_for [:supervisor, @subject] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div id="rcorners2">
+    <%= f.label :title, t("application.title.subject_title").upcase %><br>
+    <%= f.text_field :title, class: "form-control" %><br>
+    <%= f.label :description, t("application.title.subject_description").upcase %><br>
+    <%= f.text_area :description, rows: 10, class: "form-control" %>
+  </div>
+  <div class="form-group" >
+    <%= f.fields_for :tasks do |builder| %>
+      <%= render "task_form", f: builder %>
+    <% end %>
+  </div>
+  <div>
+    <hr>
+    <%= link_to_add_fields t("add_new_task"), f, :tasks %>
+  </div>
+  <div class="actions margintop">
+    <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

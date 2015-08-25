@@ -30,6 +30,12 @@ en:
       about: "About"
       list_course_title: "Course list"
       list_use_title: "List users"
+      list_subject_title: "Subject list"
+      search_by_title: "Search by title"
+      task_title: "Task title: "
+      task_description: "Task description"
+      subject_title: "Subject title"
+      subject_description: "Subject description"
     notice:
       course_created: "Course has been created"
       course_updated: "This course has been updated"
@@ -41,17 +47,27 @@ en:
       access_denied: "Access denied!"
       user_deleted: "This user has been deleted"
       user_not_deleted: "Cann't delete this user"
+      subject_created: "Subject has been created successful"
+      subject_deleted: "Subject was deleted successful"
+      subject_not_deleted: "Subject was not deleted"
+      subject_updated: "Subject has been updated"
     message:
       delete_confirm: "Are you sure?"
     button:
       submit: "submit"
       search: "search"
+      create_subject: "Create new subject"
+      delete: "Delete"
+      edit: "Edit this subject"
+      cancel: "Cancel"
+      back: "Back to view all subject"
     link:
       edit_course: "Edit description"
       delete: "Delete"
       show: "Details"
       add_course: "Add new course"
       add_user: "Add new user"
+      remove_task: "Remove this task"
     string_constant:
       list_users_in_course: "List trainees in courses"
       course_list: "Course list"
@@ -64,10 +80,16 @@ en:
       status: "Status"
       start_date: "Start Date"
       end_date: "End date"
+      course_manage: "Course Management"
+      subject_manage: "Subject Management"
     user_role:
       supervisor: "supervisor"
       trainee: "trainee"
       normal: "normal"
+    placeholder:
+      task_title: " Task title: "
+      task_description: " Write details about task "
+      search: " Search for... "
   header:
     edit_profile: "Edit profiles"
     view_profile: "View profiles"
@@ -78,3 +100,9 @@ en:
   name: "Name"
   email: "Email"
   role: "Role"
+  course_list: "Course list"
+  status: "Status: "
+  description: "Description: "
+  tasks_list: "Tasks list"
+  add_new_task: "Add new task"
+

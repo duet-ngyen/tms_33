@@ -1,0 +1,17 @@
+<div id="rcorners3" class="fields margintop task-form">
+  <div>
+    <%= f.label :title, t("application.title.task_title") %>
+    <%= f.text_field :title, class: "form-control",
+      placeholder: t("application.placeholder.task_title") %>
+  </div>
+  <div>
+    <%= f.label :description, t("application.title.task_description") %>
+    <%= f.text_area :description, rows: 3, class: "form-control",
+      placeholder: t("application.placeholder.task_description") %>
+  </div>
+  <p>
+    <%= f.label :status, t("status") %>
+    <%= f.select :status, Task.statuses.keys.to_a %>
+  </p>
+  <%= link_to_remove_fields t("application.link.remove_task"), f %>
+</div>

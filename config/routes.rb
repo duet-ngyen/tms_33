@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     resources :users, except: [:show, :edit, :update] do
       collection {get :search, to: "users#index"}
     end
+    resources :subjects do
+      collection {get :search, to: "subjects#index"}
+    end
   end
 
   devise_scope :user do
