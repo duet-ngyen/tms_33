@@ -54,6 +54,7 @@ en:
       update_user_course: "Update users in course"
       name_checkbox_course_users: "course[user_ids][]"
       course_list: "Course list"
+      course_manage: "Course Manage"
     user_role:
       supervisor: "supervisor"
       trainee: "trainee"
