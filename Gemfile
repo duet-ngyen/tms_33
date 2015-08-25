@@ -14,6 +14,7 @@ gem "kaminari"
 gem "ransack"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
+gem "cancancan"
 
 group :development, :test do
   gem "byebug"

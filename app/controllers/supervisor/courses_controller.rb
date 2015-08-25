@@ -1,4 +1,5 @@
 class Supervisor::CoursesController < ApplicationController
+  load_and_authorize_resource
   before_action :load_course, except: [:index, :new, :create]
 
   def show

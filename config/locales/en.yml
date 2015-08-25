@@ -37,6 +37,7 @@ en:
       user_updated: "Your profiles has been updated"
       update_user_course_ok: "Updated users in course"
       update_user_course_not_ok: "Cann't update users in course"
+      access_denied: "Access denied!"
     message:
       delete_confirm: "Are you sure?"
     button:
@@ -52,6 +53,11 @@ en:
       course_list: "Course list"
       update_user_course: "Update users in course"
       name_checkbox_course_users: "course[user_ids][]"
+      course_list: "Course list"
+    user_role:
+      supervisor: "supervisor"
+      trainee: "trainee"
+      normal: "normal"
   header:
     edit_profile: "Edit profiles"
     view_profile: "View profiles"
@@ -62,4 +68,3 @@ en:
   name: "Name"
   email: "Email"
   role: "Role"
-  course_list: "Course list"

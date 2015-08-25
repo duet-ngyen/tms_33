@@ -1,4 +1,5 @@
 class Supervisor::AssignTraineesController < ApplicationController
+  load_and_authorize_resource :course
   before_action :load_course
 
   def edit
