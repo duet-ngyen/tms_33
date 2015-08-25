@@ -5,7 +5,15 @@
     <li class="list-group-item list-group-item-info">
       <%= @course.description %>
     </li></br>
-    <%= link_to t("application.link.edit_course"), edit_supervisor_course_path(@course),
-      class: "btn btn-warning" %>
+    <ul>
+      <li>
+        <%= link_to t("application.string_constant.update_user_course"),
+          edit_supervisor_course_assign_trainees_path(@course) %>
+      </li>
+      <li>
+        <%= link_to t("application.link.edit_course"),
+          edit_supervisor_course_path(@course) %>
+      </li>
+    </ul>
   </div>
 </div>
