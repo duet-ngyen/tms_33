@@ -10,10 +10,12 @@
       <%= f.text_field :email %>
     </div>
 
-    <div class="field margintop">
-      <%= f.label :role %><br>
-      <%= f.select :role, [["trainee", "trainee"], ["supervisor", "supervisor"]] %>
-    </div>
+    <% if @user.supervisor? %>
+      <div class="field margintop">
+        <%= f.label :role %><br>
+        <%= select :user, :role, User.roles %>
+      </div>
+    <% end %>
 
     <div class="action margintop">
       <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
