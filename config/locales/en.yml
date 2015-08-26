@@ -29,6 +29,7 @@ en:
       help: "Help"
       about: "About"
       list_course_title: "Course list"
+      list_use_title: "List users"
     notice:
       course_created: "Course has been created"
       course_updated: "This course has been updated"
@@ -38,6 +39,8 @@ en:
       update_user_course_ok: "Updated users in course"
       update_user_course_not_ok: "Cann't update users in course"
       access_denied: "Access denied!"
+      user_deleted: "This user has been deleted"
+      user_not_deleted: "Cann't delete this user"
     message:
       delete_confirm: "Are you sure?"
     button:
@@ -48,6 +51,7 @@ en:
       delete: "Delete"
       show: "Details"
       add_course: "Add new course"
+      add_user: "Add new user"
     string_constant:
       list_users_in_course: "List Users in courses"
       course_list: "Course list"

@@ -1,0 +1,23 @@
+<% provide :title, t("application.title.list_use_title") %>
+<h1><%= t "application.title.list_use_title" %></h1>
+<div class="col-sm-3 col-md-12">
+  <%= link_to t("application.link.add_user"), new_supervisor_user_path,
+    class: "btn btn-default btn-primary" %></br>
+  <%= render "search_form" %>
+
+  <%= paginate @users %>
+  <ul class="list-group">
+    <% @users.each do |user| %>
+      <li class="list-group-item list-group-item-info">
+        <b><%= link_to user.name, user_path(user) %></b></br>
+        <%= link_to t("application.link.show"), user_path(user),
+          class: "btn btn-xs btn-info" %> |
+        <%= link_to t("application.link.delete"), supervisor_user_path(user),
+          class: "btn btn-xs btn-danger",
+          method: :delete,
+          data: {confirm: t("application.message.delete_confirm")} %>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @users %>
+</div>
