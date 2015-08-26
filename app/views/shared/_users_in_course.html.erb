@@ -5,6 +5,8 @@
       <li><%= link_to user.name, user_path(user) %></li>
     <% end %>
   </ul>
-  <%= link_to t("application.string_constant.update_user_course"),
-    edit_supervisor_course_assign_trainees_path(@course) %>
+  <% if current_user.supervisor? %>
+    <%= link_to t("application.string_constant.update_user_course"),
+      edit_supervisor_course_assign_trainees_path(@course) %>
+  <% end %>
 </div>
