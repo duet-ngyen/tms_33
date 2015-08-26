@@ -53,12 +53,17 @@ en:
       add_course: "Add new course"
       add_user: "Add new user"
     string_constant:
-      list_users_in_course: "List Users in courses"
+      list_users_in_course: "List trainees in courses"
       course_list: "Course list"
       update_user_course: "Update users in course"
       name_checkbox_course_users: "course[user_ids][]"
       course_list: "Course list"
       course_manage: "Course Manage"
+      your_courses: "List courses are added for this trainee"
+      title: "Title"
+      status: "Status"
+      start_date: "Start Date"
+      end_date: "End date"
     user_role:
       supervisor: "supervisor"
       trainee: "trainee"

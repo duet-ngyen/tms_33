@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
 
   enum role: [:supervisor, :trainee, :normal]
 
+  def classmate_with? user
+    !(self.courses & user.courses).empty?
+  end
+
   private
   def assign_default_role
     self.role = I18n.t("application.user_role.normal") unless self.role.present?
