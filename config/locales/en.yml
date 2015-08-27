@@ -62,7 +62,7 @@ en:
       cancel: "Cancel"
       back: "Back to view all subject"
     link:
-      edit_course: "Edit description"
+      edit_course: "Edit"
       delete: "Delete"
       show: "Details"
       add_course: "Add new course"
