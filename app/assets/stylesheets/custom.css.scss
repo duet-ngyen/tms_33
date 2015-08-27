@@ -53,7 +53,6 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
 
 #logo {
@@ -104,4 +103,36 @@ footer {
 /* form*/
 .margintop {
   margin-top: 10px;
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #8AC007;
+    padding: 20px;
+}
+
+#rcorners3 {
+    border-radius: 25px;
+    border: 1px solid grey;
+    padding: 20px;
+}
+
+#rcorners2 h1 {
+  text-align: left;
+}
+
+.bor-right {
+  border-right: thin double grey;
+}
+
+.clear-both{
+  clear: both;
+}
+
+.task-form {
+  margin-left: 100px;
+}
+
+.red {
+  color: red;
 }

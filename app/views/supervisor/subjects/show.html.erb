@@ -1,0 +1,23 @@
+<% provide :title, @subject.title %>
+<div id="rcorners2" class="margintop">
+  <h1><%= @subject.title %></h1>
+  <p><%= @subject.description %></p>
+</div>
+<% unless @subject.tasks.empty? %>
+  <div id="rcorners3" class="margintop task-form">
+    <h2><%= t "tasks_list" %></h2>
+    <ol>
+      <% @subject.tasks.each do |task| %>
+      <li>
+        <h4><strong><%= t "application.title.task_title" %></strong><%= task.title %></h4>
+        <p><em><strong><%= t "description" %></strong><%= task.description %></em></p>
+        <p><%= t "status" %><%= task.status %></p>
+      </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
+<%= link_to t("application.button.edit"),
+  edit_supervisor_subject_path(@subject), class: "btn btn-primary margintop" %>
+<%= link_to t("application.button.back"),
+  supervisor_subjects_path, class: "btn btn-default margintop" %>

@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.integer :subject_id
-      t.string :status
+      t.integer :status
       t.date :start_time
       t.date :end_time
 

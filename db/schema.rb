@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150821013835) do
     t.string   "title"
     t.string   "description"
     t.integer  "subject_id"
-    t.string   "status"
+    t.integer  "status"
     t.date     "start_time"
     t.date     "end_time"
     t.datetime "created_at",  null: false

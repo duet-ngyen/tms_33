@@ -1,0 +1,21 @@
+<% provide :title, t("application.title.list_subject_title") %>
+<%= link_to t("application.button.create_subject"),
+  new_supervisor_subject_path, class: "btn btn-primary" %>
+<%= render "search_form" %>
+<%= paginate @subjects %>
+<% @subjects.each do |subject| %>
+  <div id="rcorners2" class="margintop">
+    <div class="col-sm-11 bor-right">
+      <h1><%= link_to subject.title, supervisor_subject_path(subject.id) %></h1>
+      <p><%= subject.description %></p>
+    </div>
+    <div class="col-sm-1">
+      <%= link_to t("application.button.delete"), supervisor_subject_path(subject),
+        class: "btn btn-danger",
+        method: :delete,
+        data: {confirm: t("application.message.delete_confirm")} %>
+    </div>
+    <div class="clear-both"></div>
+  </div>
+<% end %>
+<%= paginate @subjects %>
