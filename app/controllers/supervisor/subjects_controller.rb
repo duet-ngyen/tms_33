@@ -45,9 +45,6 @@ class Supervisor::SubjectsController < ApplicationController
   end
 
   private
-  def load_subject
-    @subject = Subject.find_by id: params[:id]
-  end
 
   def subject_params
     params.require(:subject).permit :title, :description,

@@ -1,0 +1,18 @@
+<h1 class="text-left">Task #<%= @task.id %></h1>
+<div id="rcorners3">
+  <div>
+    <h3><strong><%= @task.title %></strong><h3>
+  </div>
+  <div>
+    <strong><%= t "status" %></strong>
+    <p><%= @task.status %></p>
+  </div>
+  <div>
+    <strong><%= t "description" %></strong>
+    <p><%= @task.description %></p>
+  </div>
+</div>
+<div class="margintop">
+  <%= link_to t("application.link.back_to_subject", parameter: @subject_task.title.to_s),
+    supervisor_subject_path(@subject_task) %>
+</div>
