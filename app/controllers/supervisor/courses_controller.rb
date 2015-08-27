@@ -47,7 +47,8 @@ class Supervisor::CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit :title, :description
+    params.require(:course).permit :title, :description, :status,
+      :start_time, :end_time
   end
 
   def load_course

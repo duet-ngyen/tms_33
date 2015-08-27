@@ -10,6 +10,21 @@
     <%= f.text_area :description, rows: 10, class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= f.label :status %>
+    <%= select :course, :status, Course.statuses.keys.to_a %>
+  </div>
+
+  <div>
+    <%= f.label :start_time, t("application.string_constant.start_date") %>
+    <%= date_select :course, :start_time %>
+  </div>
+
+  <div>
+    <%= f.label :end_time, t("application.string_constant.end_date") %>
+    <%= date_select :course, :end_time %>
+  </div>
+
   <div class="actions">
     <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
   </div>

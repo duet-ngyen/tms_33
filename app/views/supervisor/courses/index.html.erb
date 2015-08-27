@@ -10,6 +10,7 @@
     <% @courses.each do |course| %>
       <li class="list-group-item list-group-item-info">
         <b><%= link_to course.title, supervisor_course_path(course) %></b></br>
+        <%= link_to course.status, edit_supervisor_course_path(course) %></br>
         <%= link_to t("application.link.show"), supervisor_course_path(course),
           class: "btn btn-xs btn-info" %> |
         <%= link_to t("application.link.delete"), supervisor_course_path(course),
