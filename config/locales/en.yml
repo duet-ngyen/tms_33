@@ -51,6 +51,10 @@ en:
       subject_deleted: "Subject was deleted successful"
       subject_not_deleted: "Subject was not deleted"
       subject_updated: "Subject has been updated"
+      task_deleted: "Task was deleted"
+      task_not_deleted: "Task was not deleted"
+      task_updated: "Task has been updated"
+      task_not_updated: "Task was not updated"
     message:
       delete_confirm: "Are you sure?"
     button:
@@ -61,6 +65,9 @@ en:
       edit: "Edit this subject"
       cancel: "Cancel"
       back: "Back to view all subject"
+      show_details: "Show details"
+      edit_task: "Edit this task"
+      delete_task: "Delete this task"
     link:
       edit_course: "Edit"
       delete: "Delete"
@@ -68,6 +75,7 @@ en:
       add_course: "Add new course"
       add_user: "Add new user"
       remove_task: "Remove this task"
+      back_to_subject: " << Subject: %{parameter} "
     string_constant:
       list_users_in_course: "List trainees in courses"
       course_list: "Course list"
@@ -90,6 +98,10 @@ en:
       task_title: " Task title: "
       task_description: " Write details about task "
       search: " Search for... "
+    task_table:
+      id: "Task ID"
+      title: "Task title"
+      status: "Status"
   header:
     edit_profile: "Edit profiles"
     view_profile: "View profiles"

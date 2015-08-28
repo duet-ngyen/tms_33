@@ -6,15 +6,35 @@
 <% unless @subject.tasks.empty? %>
   <div id="rcorners3" class="margintop task-form">
     <h2><%= t "tasks_list" %></h2>
-    <ol>
+    <table class="table table-hover">
+      <tr>
+        <th class="col-sm-1 text-center"><%= t "application.task_table.id" %></th>
+        <th class="col-sm-5 text-center"><%= t "application.task_table.title" %></th>
+        <th class="col-sm-2 text-center"><%= t "application.task_table.status" %></th>
+        <th class="col-sm-2 text-center"></th>
+      </tr>
       <% @subject.tasks.each do |task| %>
-      <li>
-        <h4><strong><%= t "application.title.task_title" %></strong><%= task.title %></h4>
-        <p><em><strong><%= t "description" %></strong><%= task.description %></em></p>
-        <p><%= t "status" %><%= task.status %></p>
-      </li>
+        <tr>
+          <td class="col-sm-1 text-center">
+            <%= link_to task.id,
+              supervisor_subject_task_path(@subject, task) %>
+          </td>
+          <td class="col-sm-5 text-center">
+            <%= link_to task.title,
+              supervisor_subject_task_path(@subject, task) %>
+          </td>
+          <td class="col-sm-2 text-center">
+            <%= task.status %>
+          </td>
+          <td class="col-sm-2 text-center">
+            <%= link_to t("application.button.delete_task"),
+              supervisor_subject_task_path(@subject, task),
+              class: "btn btn-danger", method: :delete,
+              data: {confirm: t("application.message.delete_confirm")} %>
+          </td>
+        </tr>
       <% end %>
-    </ol>
+    </table>
   </div>
 <% end %>
 <%= link_to t("application.button.edit"),
