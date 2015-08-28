@@ -7,4 +7,8 @@ class Subject < ActiveRecord::Base
 
   accepts_nested_attributes_for :tasks,
     reject_if: lambda { |a| a[:title].blank?}, allow_destroy: true
+
+  def name
+    "##{id}. #{title}"
+  end
 end

@@ -1,0 +1,9 @@
+<%= link_to t("applicaiton.link.add_subject"), edit_supervisor_course_assign_subjects_path(@course) %>
+<ul>
+  <% @course.subjects.each do |s| %>
+    <li>
+      <%= link_to "##{s.id}.#{s.title}", supervisor_course_subject_path(@course, s) %>
+    </li>
+  <% end %>
+<ul>
+

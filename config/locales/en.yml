@@ -36,6 +36,7 @@ en:
       task_description: "Task description"
       subject_title: "Subject title"
       subject_description: "Subject description"
+      update_subject_to_course: "Add subjects to course"
     notice:
       course_created: "Course has been created"
       course_updated: "This course has been updated"
@@ -79,6 +80,7 @@ en:
       remove_task: "Remove this task"
       back_to_subject: " << Subject: %{parameter} "
       finish_subject: "Finish subject"
+      add_subject: "Add subject"
     string_constant:
       list_users_in_course: "List trainees in courses"
       list_subjects_in_course: "List subjects in courses"
