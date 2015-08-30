@@ -2,15 +2,21 @@
   <div class="container">
     <%= link_to t("application.title.base_title"), root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right welcome">
         <li><%= link_to t("application.title.home"), root_path %></li>
         <li><%= link_to t("application.title.about"), about_path %></li>
         <% if user_signed_in? %>
           <li>
-            <div class="welcome">
-              <span data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div >
+              <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="user">
+                <% if current_user.avatar_url %>
+                  <%= image_tag(current_user.avatar_url :avatar_header) %>
+                <% else %>
+                  <%= cl_image_tag("http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_thumb,g_face,r_20,d_avatar.png/non_existing_id.png",
+                  width: 48, height: 48, crop: :thumb, gravity: :face, radius: 5) %>
+                <% end %>
                 <%= current_user.name %> <span class="caret"></span>
-              </span>
+              </div>
               <ul class="dropdown-menu">
                 <li>
                   <a><%= current_user.email %></a>
@@ -23,8 +29,8 @@
                   <%= link_to t("header.view_profile"),
                     user_path(current_user), class: "navbar-link" %>
                 </li>
-                <li role="separator" class="divider"></li>
                 <% if current_user.supervisor? %>
+                  <li role="separator" class="divider"></li>
                   <li>
                     <%= link_to t("application.string_constant.course_manage"),
                       supervisor_courses_path, class: "navbar-link" %>

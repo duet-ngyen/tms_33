@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
   before_save :assign_default_role
 
   devise :database_authenticatable, :registerable,
@@ -12,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :tasks, through: :user_tasks
   has_many :user_subjects
   has_many :subjects, through: :user_subjects
+
+  mount_uploader :avatar, AvatarUploader
 
   enum role: [:supervisor, :trainee, :normal]
 

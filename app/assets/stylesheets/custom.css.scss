@@ -8,7 +8,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 section {
@@ -143,4 +143,27 @@ footer {
 
 .text-left {
   text-align: left;
+}
+
+.welcome{
+  color: #6c6c6c;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  li { cursor: pointer; cursor: hand; }
+}
+
+.avatar-profile {
+  float: left;
+}
+
+.user-info {
+  padding-left: 230px;
+}
+
+.user {
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
