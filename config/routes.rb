@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       collection {get :search, to: "subjects#index"}
       resources :tasks, only: [:show, :destroy]
     end
+    resources :activities, only: [:index, :destroy]
   end
 
   devise_scope :user do

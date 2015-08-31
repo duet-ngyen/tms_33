@@ -23,6 +23,20 @@ en:
   hello: "Hello world"
 
   application:
+    activity_logs:
+      create: "create"
+      update: "update"
+      deleted: "has been deleted"
+      finished: "finished"
+      assigned: "has been assigned"
+      remove: "has been removed"
+      changed: "changed"
+    model_name:
+      activity: "activity"
+      user: "user"
+      course: "course"
+      subject: "subject"
+      task: "task"
     title:
       base_title: "Training System"
       home: "Home"
@@ -58,6 +72,8 @@ en:
       task_not_updated: "Task was not updated"
       update_success: "Updated successfully"
       update_not_success: "Can not update"
+      activity_deleted: "This activity has been deleted"
+      not_deleted: "Cann't deleted"
     message:
       delete_confirm: "Are you sure?"
     button:
@@ -96,6 +112,7 @@ en:
       end_date: "End date"
       course_manage: "Course Management"
       subject_manage: "Subject Management"
+      ago: "ago"
     user_role:
       supervisor: "supervisor"
       trainee: "trainee"
