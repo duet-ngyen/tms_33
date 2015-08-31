@@ -16,6 +16,7 @@ gem "ransack"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
 gem "cancancan"
+gem "css3-progress-bar-rails"
 
 group :development, :test do
   gem "byebug"

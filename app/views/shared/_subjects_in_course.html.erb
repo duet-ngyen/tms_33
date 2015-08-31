@@ -2,7 +2,7 @@
   <h2><%= t "application.string_constant.list_subjects_in_course" %></h2>
   <ul>
     <% @course.subjects.each do |subject| %>
-      <li><%= link_to subject.title, "#" %></li>
+      <li><%= link_to subject.title, course_subject_path(@course, subject) %></li>
     <% end %>
   </ul>
   <% if current_user.supervisor? %>

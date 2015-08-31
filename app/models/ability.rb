@@ -14,6 +14,12 @@ class Ability
       can :show, Course do |course|
         course.users.include?(user) && course.active?
       end
+
+      can :show, Subject
+
+      can :update, UserSubject do |user_subject|
+        user_subject.user == user
+      end
     end
   end
 end

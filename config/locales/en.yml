@@ -51,6 +51,7 @@ en:
       subject_title: "Subject title"
       subject_description: "Subject description"
       update_subject_to_course: "Add subjects to course"
+      your_progress: "Your progress"
     notice:
       course_created: "Course has been created"
       course_updated: "This course has been updated"

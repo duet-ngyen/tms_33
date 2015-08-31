@@ -1,21 +1,19 @@
 <div class="col-md-8">
   <h2><%= t "application.string_constant.your_courses" %></h2>
-  <ul>
+  <table class="table">
+    <tr>
+      <th><%= t "application.string_constant.title" %></th>
+      <th><%= t "application.string_constant.status" %></th>
+      <th><%= t "application.string_constant.start_date" %></th>
+      <th><%= t "application.string_constant.end_date" %></th>
+    </tr>
     <% @user.try(:courses).each do |course| %>
-      <table class="table">
-        <tr>
-          <th><%= t "application.string_constant.title" %></th>
-          <th><%= t "application.string_constant.status" %></th>
-          <th><%= t "application.string_constant.start_date" %></th>
-          <th><%= t "application.string_constant.end_date" %></th>
-        </tr>
-        <tr>
-          <td><%= link_to course.title, course_path(course) %></td>
-          <td><%= course.status %></td>
-          <td><%= course.start_time %></td>
-          <td><%= course.end_time %></td>
-        </tr>
-      </table>
+      <tr>
+        <td><%= link_to course.title, course_path(course) %></td>
+        <td><%= course.status %></td>
+        <td><%= course.start_time %></td>
+        <td><%= course.end_time %></td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </div>
