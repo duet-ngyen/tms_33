@@ -1,0 +1,13 @@
+<h1><%= t "application.model_name.activity" %></h1>
+
+<%= paginate @activities %>
+<% @activities.each do |activity| %>
+  <br>
+  <%= activity.activity_type %>
+  <%= activity.title %>
+  <%= time_ago_in_words activity.created_at %>
+  <%= t "application.string_constant.ago"%>
+  <%= link_to t("application.link.delete"), [:supervisor, activity], method: :delete,
+    data: {confirm: t("application.message.delete_confirm")} %>
+<% end %>
+<%= paginate @activities %>
