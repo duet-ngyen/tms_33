@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :courses do
       collection {get :search, to: "courses#index"}
       resource :assign_trainees, only: [:edit, :update]
+      resource :assign_subjects, only: [:edit, :update]
+      resources :subjects, only: [:show]
     end
     resources :users, except: [:show, :edit, :update] do
       collection {get :search, to: "users#index"}

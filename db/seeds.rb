@@ -4,6 +4,6 @@ User.create(name: "Duyet", role: "supervisor",
 User.create(name: "thuc", role: "normal",
   email: "thuc.vn@gmail.com",
   password: "12341234", password_confirmation: "12341234")
-User.create(name: "Nam", role: "normal",
+User.create(name: "Nam", role: "trainee",
   email: "nam.vn@gmail.com",
   password: "12341234", password_confirmation: "12341234")

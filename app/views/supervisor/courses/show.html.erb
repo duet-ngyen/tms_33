@@ -1,16 +1,22 @@
 <% provide :title, @course.title %>
-<div class="col-md-8">
-  <div id="content">
-    <h1><%= @course.title %></h1>
-    <li class="list-group-item list-group-item-info">
-      <%= @course.description %>
-    </li></br>
-    <ul>
-      <li>
-        <%= link_to t("application.link.edit_course"),
-          edit_supervisor_course_path(@course) %>
-      </li>
-    </ul>
+<div>
+  <div class="col-md-8">
+    <div id="content">
+      <h1><%= @course.title %></h1>
+      <li class="list-group-item list-group-item-info">
+        <%= @course.description %>
+      </li></br>
+      <ul>
+        <li>
+          <%= link_to t("application.link.edit_course"),
+            edit_supervisor_course_path(@course) %>
+        </li>
+        <br>
+        <li>
+          <%= render "add_subject_to_course" %>
+        </li>
+      </ul>
+    </div>
   </div>
+  <%= render "shared/users_in_course" %>
 </div>
-<%= render "shared/users_in_course" %>
