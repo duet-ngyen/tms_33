@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:edit, :update, :show]
 
   def show
+    @course = @user.courses.active_course
+    @tasks = Task.all_tasks(@course.subjects)
   end
 
   def edit

@@ -1,0 +1,17 @@
+<h2><%= t "application.title.your_progress" %></h2>
+
+<%= progress_bar(@course.course_progress, color: "blue", rounded: true) %>
+<table class="table table-hover">
+  <tr>
+    <th class="col-sm-2 text-center"><%= t "application.task_table.id" %></th>
+    <th class="col-sm-7 text-center"><%= t "application.task_table.title" %></th>
+    <th class="col-sm-3 text-center"><%= t "application.task_table.status" %></th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td class="col-sm-2 text-center"><%= task.id %></td>
+      <td class="col-sm-7 text-center"><%= task.title %></td>
+      <td class="col-sm-3 text-center"><%= task.status %></td>
+    </tr>
+  <% end %>
+</table>

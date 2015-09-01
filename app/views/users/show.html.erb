@@ -4,3 +4,7 @@
 <p><strong><%= t "email" %>:</strong> <%= @user.email %></p>
 <p><strong><%= t "role" %>:</strong> <%= @user.role %></p>
 <%= render "courses_of_user" %>
+<div class="clear-both">
+  <hr>
+  <%= render "tasks_of_user" %>
+<div>

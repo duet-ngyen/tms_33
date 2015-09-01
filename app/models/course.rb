@@ -11,6 +11,12 @@ class Course < ActiveRecord::Base
 
   enum status: [:ready, :active, :finished]
 
+  scope :active_course, -> {where(status: 1).first}
+
+  def course_progress
+    Task.finished(self.subjects).size.to_f / Task.all_tasks(self.subjects).size * 100
+  end
+
   private
   def set_default_status
     self.status = :ready unless self.status.present?
