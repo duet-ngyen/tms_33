@@ -1,6 +1,18 @@
 <%= form_for @user do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="form">
+    <div>
+      <% if @user.avatar? %>
+        <%= image_tag(@user.avatar_url :avatar_profile) %>
+      <% else %>
+        <%= cl_image_tag("http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_thumb,g_face,r_20,d_avatar.png/non_existing_id.png",
+          width: 200, height: 200, crop: :thumb, gravity: :face, radius: 5) %>
+      <% end %>
+      <div class="margintop">
+        <%= f.file_field :avatar %>
+      </div>
+    </div>
+
     <div class="field margintop">
       <%= f.label :name %><br>
       <%= f.text_field :name %>

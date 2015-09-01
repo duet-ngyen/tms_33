@@ -17,6 +17,10 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
 gem "cancancan"
 gem "css3-progress-bar-rails"
+gem "cloudinary"
+gem "carrierwave"
+gem "mini_magick"
+gem "figaro"
 
 group :development, :test do
   gem "byebug"

@@ -1,10 +1,18 @@
 <h1><%= t "welcome" %></h1>
 <h3><%= t "your_profile" %></h3>
-<p><strong><%= t "name" %>:</strong> <%= @user.name %></p>
-<p><strong><%= t "email" %>:</strong> <%= @user.email %></p>
-<p><strong><%= t "role" %>:</strong> <%= @user.role %></p>
-<%= render "courses_of_user" %>
+<div class="avatar-profile">
+  <% if current_user.avatar_url %>
+    <%= image_tag(current_user.avatar_url :avatar_profile) %>
+  <% else %>
+    <%= cl_image_tag("http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_thumb,g_face,r_20,d_avatar.png/non_existing_id.png",
+    width: 200, height: 200, crop: :thumb, gravity: :face, radius: 5) %>
+  <% end %>
+</div>
+<div class="user-info">
+  <p><strong><%= t "name" %>:</strong> <%= @user.name %></p>
+  <p><strong><%= t "email" %>:</strong> <%= @user.email %></p>
+  <p><strong><%= t "role" %>:</strong> <%= @user.role %></p>
+</div>
 <div class="clear-both">
-  <hr>
-  <%= render "tasks_of_user" %>
-<div>
+  <%= render "courses_of_user" %>
+</div>
