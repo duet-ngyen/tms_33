@@ -4,36 +4,31 @@
   <p><%= @subject.description %></p>
   <p><%= t "status" %><%= @user_subject.status %></p>
 </div>
-<% unless @subject.tasks.empty? %>
-  <div id="rcorners3" class="margintop task-form">
-    <h2><%= t "tasks_list" %></h2>
-    <table class="table table-hover">
+
+<%= form_for @user_subject do |f| %>
+  <h2><%= t "tasks_list" %></h2>
+  <table class="table table-hover">
+    <tr>
+      <th class="col-sm-1 text-center"><%= t "application.task_table.id" %></th>
+      <th class="col-sm-5 text-center"><%= t "application.task_table.title" %></th>
+      <th class="col-sm-2 text-center"><%= t "application.task_table.status" %></th>
+    </tr>
+    <%= f.fields_for :user_tasks do |builder| %>
       <tr>
-        <th class="col-sm-1 text-center"><%= t "application.task_table.id" %></th>
-        <th class="col-sm-5 text-center"><%= t "application.task_table.title" %></th>
-        <th class="col-sm-2 text-center"><%= t "application.task_table.status" %></th>
+        <td class="col-sm-1 text-center">
+          <%= link_to builder.object.task.id,
+            supervisor_subject_task_path(@subject, builder.object.task) %>
+        </td>
+        <td class="col-sm-5 text-center">
+          <%= link_to builder.object.task.title,
+            supervisor_subject_task_path(@subject, builder.object.task) %>
+        </td>
+        <td class="col-sm-2 text-center">
+          <%= builder.check_box :status, checked: builder.object.finished?,
+            disabled: builder.object.finished? || @user_subject.finished? %>
+        </td>
       </tr>
-      <% @subject.tasks.each do |task| %>
-        <tr>
-          <td class="col-sm-1 text-center">
-            <%= link_to task.id,
-              supervisor_subject_task_path(@subject, task) %>
-          </td>
-          <td class="col-sm-5 text-center">
-            <%= link_to task.title,
-              supervisor_subject_task_path(@subject, task) %>
-          </td>
-          <td class="col-sm-2 text-center">
-            <%= task.status %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-<% end %>
-<% unless @user_subject.finished? %>
-  <%= form_for @user_subject do |f| %>
-    <%= f.hidden_field :status, value: t("application.status.finished") %>
-    <%= f.submit t("application.link.finish_subject"), class: "btn btn-primary" %>
-  <% end %>
+    <% end %>
+  </table>
+  <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
 <% end %>

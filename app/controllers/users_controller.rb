@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:edit, :update, :show]
 
   def show
-    @course = @user.courses.active_course
-    @tasks = Task.all_tasks(@course.subjects)
+    @course = @user.try(:courses).try(:active_course).first
+    @user_tasks = Kaminari.paginate_array(@user.user_tasks).page params[:page]
   end
 
   def edit

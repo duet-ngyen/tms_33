@@ -11,7 +11,7 @@ class Course < ActiveRecord::Base
 
   enum status: [:ready, :active, :finished]
 
-  scope :active_course, -> {where(status: 1).first}
+  scope :active_course, -> {where status: 1}
 
   def course_progress
     Task.finished(self.subjects).size.to_f / Task.all_tasks(self.subjects).size * 100

@@ -146,4 +146,6 @@ en:
   description: "Description: "
   tasks_list: "Tasks list"
   add_new_task: "Add new task"
+  opening: "opening"
+  finished: "finished"
 

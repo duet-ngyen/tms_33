@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150829045029) do
     t.integer  "user_id"
     t.integer  "task_id"
     t.integer  "user_subject_id"
+    t.boolean  "status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

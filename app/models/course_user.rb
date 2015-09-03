@@ -17,7 +17,7 @@ class CourseUser < ActiveRecord::Base
 
   def store_delete_activity
     create_activity I18n.t("application.activity_logs.delete"),
-      user.id, self.id, self.task.title
+      user.id, self.id, self.course.title
   end
 
   def update_user_subject
