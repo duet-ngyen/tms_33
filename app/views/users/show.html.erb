@@ -12,7 +12,9 @@
   <p><strong><%= t "name" %>:</strong> <%= @user.name %></p>
   <p><strong><%= t "email" %>:</strong> <%= @user.email %></p>
   <p><strong><%= t "role" %>:</strong> <%= @user.role %></p>
+  <%= render "courses_of_user" %>
 </div>
 <div class="clear-both">
-  <%= render "courses_of_user" %>
+  <hr>
+  <%= render "tasks_of_user" %>
 </div>

@@ -4,7 +4,8 @@ class CreateUserTasks < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.references :task, index: true, foreign_key: true
       t.references :user_subject, index: true, foreign_key: true
-      
+      t.boolean :status
+
       t.timestamps null: false
     end
   end
