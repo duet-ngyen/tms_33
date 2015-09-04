@@ -1,5 +1,5 @@
 <%= search_form_for @search, url: search_supervisor_subjects_path do |f| %>
-  <%= f.label t("application.title.search_by_title") %>
+  <h3><%= f.label t("application.title.search_by_title") %></h3>
   <div class="input-group">
     <%= f.search_field :title_cont, class: "form-control",
       placeholder: t("application.placeholder.search") %>

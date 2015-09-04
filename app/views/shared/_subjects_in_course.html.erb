@@ -1,12 +1,12 @@
-<div class="col-md-4">
-  <h2><%= t "application.string_constant.list_subjects_in_course" %></h2>
-  <ul>
+<div class="col-md-8">
+  <h3><%= t "application.string_constant.list_subjects_in_course" %></h3>
+  <ol>
     <% @course.subjects.each do |subject| %>
       <li><%= link_to subject.title, course_subject_path(@course, subject) %></li>
     <% end %>
-  </ul>
+  </ol>
   <% if current_user.supervisor? %>
-    <%= link_to t("application.string_constant.update_user_course"),
+    <%= link_to t("application.title.update_subject_to_course"),
       edit_supervisor_course_assign_trainees_path(@course) %>
   <% end %>
 </div>

@@ -1,5 +1,10 @@
 <%= search_form_for @search, url: search_supervisor_courses_path do |f| %>
-  <%= f.label :title_cont %>
-  <%= f.search_field :title_cont %>
-  <%= f.submit t("application.button.search") %>
+  <h3><%= f.label :title_cont %></h3>
+  <div class="input-group">
+    <%= f.search_field :title_cont, class: "form-control",
+      placeholder: t("application.placeholder.search") %>
+    <span class="input-group-btn">
+      <%= f.submit t("application.button.search"), class: "btn btn-default" %>
+    </span>
+  </div>
 <% end %>

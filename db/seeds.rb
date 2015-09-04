@@ -26,13 +26,29 @@ subjects.each do |subject|
 end
 
 10.times do |n|
+  name  = Faker::Name.name
+  email = "framgia.tms#{n+1}@gmail.com"
+  User.create!(name:  name, email: email, password: "12341234",
+    password_confirmation: "12341234", role: :trainee, remote_avatar_url: "")
+end
+
+10.times do |n|
   title = Faker::Name.title
   description = Faker::Lorem.paragraph(5)
   start_date = Date.today().strftime("%F")
   end_date =  (Date.today() + rand(1..100).days).strftime("%F")
   Course.create!(title: title, description: description,
-    start_time: start_date, end_time: end_date)
+    start_time: start_date, end_time: end_date,
+    users: User.order("random()").limit(5),
+    subjects: Subject.order("random()").limit(5))
 end
+
+
+
+# course = Course.find(1)
+# user_course_1 = User.order("random()")limit(5)
+# course.users = user_course_1
+
 
 courses = Course.order(:created_at)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

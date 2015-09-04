@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require bootstrap-datepicker
 //= require_tree .
 
 function remove_fields(link) {

@@ -13,14 +13,14 @@
       </div>
     </div>
 
-    <div class="field margintop">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+    <div class="form-group form-inline margintop">
+      <%= f.label :name, class: "label-new-course" %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
 
-    <div class="field margintop">
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
+    <div class="form-group form-inline">
+      <%= f.label :email, class: "label-new-course" %>
+      <%= f.text_field :email, class: "form-control" %>
     </div>
 
     <% if @user.supervisor? %>

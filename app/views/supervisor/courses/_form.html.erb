@@ -1,28 +1,32 @@
 <%= form_for [:supervisor, @course] do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, class: "label-new-course" %><br>
     <%= f.text_field :title, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description, class: "label-new-course" %><br>
     <%= f.text_area :description, rows: 10, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= select :course, :status, Course.statuses.keys.to_a %>
+  <div class="form-group form-inline">
+    <%= f.label :status, class: "label-new-course" %>
+    <%= select :course, :status, Course.statuses.keys.to_a, {}, {class: "form-control"} %>
   </div>
 
-  <div>
-    <%= f.label :start_time, t("application.string_constant.start_date") %>
-    <%= date_select :course, :start_time %>
+  <div class="form-group form-inline">
+    <%= f.label :start_time, t("application.string_constant.start_date"),
+      class: "label-new-course" %>
+    <%= f.text_field :start_time, :"data-provide" => "datepicker",
+      value: Time.current.strftime('%b-%d-%Y'), class: "form-control" %>
   </div>
 
-  <div>
-    <%= f.label :end_time, t("application.string_constant.end_date") %>
-    <%= date_select :course, :end_time %>
+  <div class="form-group form-inline">
+    <%= f.label :end_time, t("application.string_constant.end_date"),
+      class: "label-new-course" %>
+    <%= f.text_field :end_time, :"data-provide" => "datepicker",
+      value: Time.current.strftime('%b-%d-%Y'), class: "form-control" %>
   </div>
 
   <div class="actions">

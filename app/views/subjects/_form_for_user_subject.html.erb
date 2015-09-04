@@ -1,5 +1,6 @@
 <%= form_for @user_subject do |f| %>
-  <h2><%= t "tasks_list" %></h2>
+  <h3 class="center"><%= t "tasks_list" %></h3>
+  <% hide = 0 %>
   <table class="table table-hover">
     <tr>
       <th class="col-sm-1 text-center"><%= t "application.task_table.id" %></th>
@@ -8,22 +9,29 @@
       <th class="col-sm-2 text-center"><%= t "application.task_table.status" %></th>
     </tr>
     <%= f.fields_for :user_tasks do |builder| %>
-      <tr>
-        <td class="col-sm-1 text-center">
-          <%= builder.object.task.id %>
-        </td>
-        <td class="col-sm-5 text-center">
-          <%= builder.object.task.title %>
-        </td>
-        <td class="col-sm-5 text-center">
-          <%= builder.object.task.description %>
-        </td>
-        <td class="col-sm-2 text-center">
-          <%= builder.check_box :status, checked: builder.object.finished?,
-            disabled: builder.object.finished? || @user_subject.finished? %>
-        </td>
-      </tr>
+      <% if builder.object.task %>
+
+        <tr>
+          <td class="col-sm-1 text-center">
+            <strong><%= builder.object.task.id %></strong>
+          </td>
+          <td class="col-sm-5 text-center">
+            <%= builder.object.task.title %>
+          </td>
+          <td class="col-sm-5 text-center">
+            <%= builder.object.task.description %>
+          </td>
+          <td class="col-sm-2 text-center">
+            <%= builder.check_box :status, checked: builder.object.finished?,
+              disabled: builder.object.finished? || @user_subject.finished? %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
-  <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
+  <div>
+    <% if @user_subject.user_tasks.size > 0 %>
+      <%= f.submit t("application.button.submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
 <% end %>

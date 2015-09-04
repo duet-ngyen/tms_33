@@ -1,12 +1,13 @@
 <div class="col-md-4">
-  <h2><%= t "application.string_constant.list_users_in_course" %></h2>
-  <ul>
-    <% @course.try(:users).each do |user| %>
-      <li><%= link_to user.name, user_path(user) %></li>
-    <% end %>
-  </ul>
+  <h3><%= t "application.string_constant.list_users_in_course" %></h3>
   <% if current_user.supervisor? %>
     <%= link_to t("application.string_constant.update_user_course"),
       edit_supervisor_course_assign_trainees_path(@course) %>
   <% end %>
+  <ol>
+  <br>
+    <% @course.try(:users).each do |user| %>
+      <li><%= link_to user.name, user_path(user) %></li>
+    <% end %>
+  </ol>
 </div>

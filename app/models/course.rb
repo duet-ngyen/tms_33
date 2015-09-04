@@ -1,9 +1,9 @@
 class Course < ActiveRecord::Base
   before_save :set_default_status
 
-  has_many :course_users
+  has_many :course_users, dependent: :destroy
   has_many :users, through: :course_users
-  has_many :course_subjects
+  has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
 
   validates :title, presence: true

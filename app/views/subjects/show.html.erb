@@ -9,6 +9,7 @@
       <%= f.submit t("application.link.finish_subject"), class: "btn btn-primary" %>
     <% end %>
   <% end %>
-  <%= progress_bar(@user_subject.progress, color: "blue", rounded: true) %>
+  <br>
+  <%= progress_bar(@user_subject.progress, color: "green", rounded: true, tiny: :true, class: "progress-bar") %>
 </div>
 <%= render "form_for_user_subject" %>
