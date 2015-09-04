@@ -21,6 +21,7 @@ gem "cloudinary"
 gem "carrierwave"
 gem "mini_magick"
 gem "figaro"
+gem "activeadmin", github: "activeadmin"
 
 group :development, :test do
   gem "byebug"
