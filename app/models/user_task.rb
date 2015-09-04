@@ -8,6 +8,8 @@ class UserTask < ActiveRecord::Base
   after_create :store_assign_activity, :update_user_task
   after_destroy :store_delete_activity
 
+  scope :finished, -> {where status: true}
+
   def finished?
     self.status
   end

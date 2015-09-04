@@ -13,6 +13,10 @@ class UserSubject < ActiveRecord::Base
 
   enum status: [:ready, :started, :finished]
 
+  def progress
+    100*self.user_tasks.finished.size.to_f / self.user_tasks.size if self.user_tasks
+  end
+
   private
   def update_user_tasks
     self.subject.tasks.each do |task|

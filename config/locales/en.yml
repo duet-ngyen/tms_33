@@ -114,6 +114,7 @@ en:
       course_manage: "Course Management"
       subject_manage: "Subject Management"
       ago: "ago"
+      progress: "progress(%)"
     user_role:
       supervisor: "supervisor"
       trainee: "trainee"

@@ -6,6 +6,7 @@
       <th><%= t "application.string_constant.status" %></th>
       <th><%= t "application.string_constant.start_date" %></th>
       <th><%= t "application.string_constant.end_date" %></th>
+      <th><%= t "application.string_constant.progress" %></th>
     </tr>
     <% @user.try(:courses).each do |course| %>
       <tr>
@@ -13,6 +14,9 @@
         <td><%= course.status %></td>
         <td><%= course.start_time %></td>
         <td><%= course.end_time %></td>
+        <td>
+          <%= @user.course_user(course).progress %>
+        </td>
       </tr>
     <% end %>
   </table>

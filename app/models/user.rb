@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   enum role: [:supervisor, :trainee, :normal]
 
+  def course_user course
+    self.course_users.find_by course: course
+  end
+
   def classmate_with? user
     !(self.courses & user.courses).empty?
   end
