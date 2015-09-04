@@ -35,3 +35,4 @@ end
 end
 
 courses = Course.order(:created_at)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
