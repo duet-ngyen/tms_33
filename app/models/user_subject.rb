@@ -4,17 +4,22 @@ class UserSubject < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject
   belongs_to :course_user
-  has_many :user_tasks
+  has_many :user_tasks, dependent: :destroy
 
   after_create :store_assign_activity, :update_user_tasks
   after_destroy :store_delete_activity
 
-  accepts_nested_attributes_for :user_tasks, allow_destroy: true
+  accepts_nested_attributes_for :user_tasks,
+    reject_if: lambda { |a| a[:status].blank?}, allow_destroy: true
 
   enum status: [:ready, :started, :finished]
 
   def progress
-    100*self.user_tasks.finished.size.to_f / self.user_tasks.size if self.user_tasks
+    if self.user_tasks.empty?
+      0
+    else
+      100*self.user_tasks.finished.size.to_f / self.user_tasks.size
+    end
   end
 
   private

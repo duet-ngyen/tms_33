@@ -10,7 +10,6 @@
       <tr>
         <th class="col-sm-1 text-center"><%= t "application.task_table.id" %></th>
         <th class="col-sm-5 text-center"><%= t "application.task_table.title" %></th>
-        <th class="col-sm-2 text-center"><%= t "application.task_table.status" %></th>
         <th class="col-sm-2 text-center"></th>
       </tr>
       <% @subject.tasks.each do |task| %>
@@ -22,9 +21,6 @@
           <td class="col-sm-5 text-center">
             <%= link_to task.title,
               supervisor_subject_task_path(@subject, task) %>
-          </td>
-          <td class="col-sm-2 text-center">
-            <%= task.status %>
           </td>
           <td class="col-sm-2 text-center">
             <%= link_to t("application.button.delete_task"),
