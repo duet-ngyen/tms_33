@@ -6,12 +6,12 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :course_users
+  has_many :course_users, dependent: :destroy
   has_many :courses, through: :course_users
   has_many :activities
-  has_many :user_tasks
+  has_many :user_tasks, dependent: :destroy
   has_many :tasks, through: :user_tasks
-  has_many :user_subjects
+  has_many :user_subjects, dependent: :destroy
   has_many :subjects, through: :user_subjects
 
   mount_uploader :avatar, AvatarUploader
