@@ -22,7 +22,7 @@ class Supervisor::UsersController < ApplicationController
 
   def destroy
     @user = User.find params[:id]
-    if user.destroy
+    if @user.destroy
       flash[:alert] = t "application.notice.user_deleted"
     else
       flash[:alert] = t "application.notice.user_not_deleted"
