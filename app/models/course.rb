@@ -6,8 +6,8 @@ class Course < ActiveRecord::Base
   has_many :course_subjects
   has_many :subjects, through: :course_subjects
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates :title, presence: true, length: {maximum: 50, minimum: 3}
+  validates :description, presence: true, length: {minimum: 3}
 
   enum status: [:ready, :active, :finished]
 
