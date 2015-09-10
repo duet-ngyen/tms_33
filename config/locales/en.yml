@@ -137,6 +137,11 @@ en:
     view_profile: "View profiles"
     logout: "Logout"
     login: "Login"
+  rspec:
+    course_name: "PHP Course"
+    course_description: "Description for PHP course"
+    user_name: "Duyet"
+    subject_name: "Subject one"
   welcome: "Welcome to TMS Framgia"
   your_profile: "Your profiles"
   name: "Name"
@@ -149,4 +154,3 @@ en:
   add_new_task: "Add new task"
   opening: "opening"
   finished: "finished"
-
